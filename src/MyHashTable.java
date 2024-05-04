@@ -68,7 +68,8 @@ public class MyHashTable<K, V> {
     }
 
     public K getKey(V value) {
-        return (K) yeuxdef(value).key;
+        HashNode foundNode = yeuxdef(value);
+        return foundNode == null ? null: (K) foundNode.key;
     }
 
     private HashNode yeuxdef(V value) {
