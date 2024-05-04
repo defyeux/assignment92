@@ -15,19 +15,35 @@ public class MyHashTable<K, V> {
     }
 
     public MyHashTable() {
-
+        lst = new HashNode[capacity];
     }
 
     public MyHashTable(int capacity) {
-
+        this.capacity = capacity;
+        lst = new HashNode[capacity];
     }
 
     private int hash(K key) {
-        return - 1;
+        return key.hashCode() % capacity;
     }
 
     public void put(K key, V value) {
+        HashNode newNode = new HashNode(key, value);
+        int index = hash(key);
 
+        if (lst[index] == null) {
+            lst[index] = newNode;
+        } else {
+            HashNode currentNode = lst[index];
+
+            while(currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+
+            currentNode.next = newNode;
+        }
+
+        size++;
     }
 
     public V get(K key) {
