@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eb310e0-dc62-49a3-86ef-38860966f1b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TestForHastTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestForHastTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestForHastTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

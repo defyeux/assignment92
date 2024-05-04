@@ -47,6 +47,15 @@ public class MyHashTable<K, V> {
     }
 
     public V get(K key) {
+        int index = hash(key);
+        HashNode currentNode = lst[index];
+
+        while (currentNode != null) {
+            if (currentNode.key == key) {
+                return (V) currentNode.value;
+            }
+        }
+
         return null;
     }
 
@@ -55,10 +64,25 @@ public class MyHashTable<K, V> {
     }
 
     public boolean contains(V value) {
-        return false;
+        return yeuxdef(value) != null;
     }
 
     public K getKey(V value) {
+        return (K) yeuxdef(value).key;
+    }
+
+    private HashNode yeuxdef(V value) {
+        for (HashNode head: lst) {
+            HashNode currentNode = head;
+
+            while (currentNode != null) {
+                if (currentNode.value == value) {
+                    return currentNode;
+                }
+                currentNode = currentNode.next;
+            }
+        }
+
         return null;
     }
 }
