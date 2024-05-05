@@ -107,4 +107,12 @@ public class MyHashTable<K, V> {
 
         return null;
     }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean empty() {
+        return size == 0;
+    }
 }
