@@ -8,5 +8,7 @@ public class TestForHastTable {
         System.out.println(lst.contains("333-333"));
         System.out.println(lst.getKey("333-333"));
         System.out.println(lst.getKey("10000000"));
+        System.out.println(lst.remove(10));
+        System.out.println(lst.get(10));
     }
 }

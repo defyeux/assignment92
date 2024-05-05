@@ -60,6 +60,27 @@ public class MyHashTable<K, V> {
     }
 
     public V remove(K key) {
+        int index = hash(key);
+        HashNode currentNode = lst[index];
+        HashNode previousNode = null;
+
+        if (currentNode.next == null) {
+            lst[index] = null;
+            size--;
+            return (V) currentNode;
+        }
+
+        while (currentNode != null) {
+            if (currentNode.key == key) {
+                previousNode.next = currentNode.next;
+                size--;
+                return (V) currentNode;
+            }
+
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
         return null;
     }
 
