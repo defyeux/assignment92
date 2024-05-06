@@ -5,7 +5,7 @@ public class TestForBST {
         tree.put(4, 4);
         tree.put(5, 5);
         System.out.println(tree.root.key);
-        System.out.println(tree.root.left.key);
         System.out.println(tree.root.right.key);
+        System.out.println(tree.root.right.right.key);
     }
 }
