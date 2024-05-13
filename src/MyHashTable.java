@@ -1,6 +1,7 @@
 public class MyHashTable<K, V> {
     private HashNode[] lst;
-    private int capacity = 11;
+    private int[] counter;
+    private final int capacity;
     private int size;
 
     private class HashNode<K, V> {
@@ -15,12 +16,15 @@ public class MyHashTable<K, V> {
     }
 
     public MyHashTable() {
+        capacity = 11;
         lst = new HashNode[capacity];
+        counter = new int[capacity];
     }
 
     public MyHashTable(int capacity) {
         this.capacity = capacity;
         lst = new HashNode[capacity];
+        counter = new int[capacity];
     }
 
     private int hash(K key) {
@@ -43,6 +47,7 @@ public class MyHashTable<K, V> {
             currentNode.next = newNode;
         }
 
+        counter[index]++;
         size++;
     }
 
@@ -72,8 +77,16 @@ public class MyHashTable<K, V> {
 
         while (currentNode != null) {
             if (currentNode.key == key) {
+                if (previousNode == null) {
+                    lst[index] = null;
+                    size--;
+                    counter[index]--;
+                    return (V) currentNode.value;
+                }
+
                 previousNode.next = currentNode.next;
                 size--;
+                counter[index]--;
                 return (V) currentNode;
             }
 
@@ -83,6 +96,30 @@ public class MyHashTable<K, V> {
 
         return null;
     }
+
+//    public V delete(K key) {
+//        int index = hash(key);
+//
+//        if (lst[index] == null) {
+//            return null;
+//        }
+//
+//        HashNode currentNode = lst[index];
+//        HashNode previousNode;
+//
+//        while (currentNode != null) {
+//            if (currentNode.key == key) {
+//                previousNode.next = currentNode.next;
+//                return (V) currentNode.value;
+//            }
+//
+//            previousNode = currentNode;
+//            currentNode = currentNode.next;
+//        }
+//
+//        return null;
+//    }
+
 
     public boolean contains(V value) {
         return yeuxdef(value) != null;
@@ -107,6 +144,27 @@ public class MyHashTable<K, V> {
 
         return null;
     }
+
+    public void number_chains_in_buckets() {
+        for (int i = 0; i < capacity; i++) {
+            System.out.printf("The number of chains in %d bucket is %d\n", i, counter[i]);
+        }
+    }
+
+    public double getLoadFactor() {
+        return (double) size / capacity;
+    }
+
+    public double averageDeviation() {
+        double sum = 0;
+        double loadFactor = getLoadFactor();
+
+        for (int i = 0; i < capacity; i++) {
+            sum += Math.abs(counter[i] - loadFactor);
+        }
+        return sum / capacity;
+    }
+
 
     public int size() {
         return size;
