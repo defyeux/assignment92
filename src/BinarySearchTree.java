@@ -116,9 +116,54 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         return node;
     }
 
+    public void remove(K key) {
+        root = remove(root, key);
+    }
+
+    private Node remove(Node node, K key) {
+        if (node == null) return null;
+        int n = key.compareTo(node.key);
+        if (n > 0) {
+            node.left = remove(node.left, key);
+        }
+        if (n < 0) {
+            node.left = remove(node.right, key);
+        } else {
+            if (node.right == null) return node.left;
+            if (node.left == null) return node.right;
+            Node newNode = node;
+            node = min(node.right);
+            node.right = deleteMin(newNode.right);
+            node.left = newNode.left;
+        }
+
+        return node;
+    }
+
+    public void deleteMin() {
+        root = deleteMin(root);
+    }
+
+    public K min() {
+        return min(root).key;
+    }
+
+    private Node min(Node node) {
+        if (node.left == null) return null;
+        return min(node);
+    }
+
+    private Node deleteMin(Node node) {
+        if (node.left == null) return node.right;
+        node.left = deleteMin(node.left);
+        return node;
+    }
+
     private Node findSmallestValue(Node node) {
         return node.right == null ? root: findSmallestValue(node.right);
     }
+
+
 
 
     public Iterable<K> iterator() {
