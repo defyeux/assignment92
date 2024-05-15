@@ -56,7 +56,7 @@ public class MyHashTable<K, V> {
         HashNode currentNode = lst[index];
 
         while (currentNode != null) {
-            if (currentNode.key == key) {
+            if (currentNode.key.equals(key)) {
                 return (V) currentNode.value;
             }
         }
@@ -76,7 +76,7 @@ public class MyHashTable<K, V> {
         }
 
         while (currentNode != null) {
-            if (currentNode.key == key) {
+            if (currentNode.key.equals(key)) {
                 if (previousNode == null) {
                     lst[index] = null;
                     size--;
@@ -135,7 +135,7 @@ public class MyHashTable<K, V> {
             HashNode currentNode = head;
 
             while (currentNode != null) {
-                if (currentNode.value == value) {
+                if (currentNode.value.equals(value)) {
                     return currentNode;
                 }
                 currentNode = currentNode.next;

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eb310e0-dc62-49a3-86ef-38860966f1b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TestForHashTable2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyHashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestForHastTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestForHastTable1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestForBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestForBST.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TestForHashTable2">
+  <component name="RunManager" selected="Application.TestForBST">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="iloveng" />
@@ -76,10 +76,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestForBST" />
         <item itemvalue="Application.TestForHashTable2" />
         <item itemvalue="Application.TestForHastTable1" />
         <item itemvalue="Application.RandomString" />
-        <item itemvalue="Application.TestForBST" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

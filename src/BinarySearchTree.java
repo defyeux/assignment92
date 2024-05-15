@@ -1,5 +1,8 @@
+import java.util.Iterator;
+
 public class BinarySearchTree<K extends Comparable<K>, V> {
     private Node root;
+    private int size;
 
     private class Node {
         private K key;
@@ -16,9 +19,11 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     public BinarySearchTree() {
         root = null;
+        size = 0;
     }
 
     public void put(K key, V value) {
+        size++;
         Node newNode = new Node(key, value);
 
         if (root == null) root = newNode;
@@ -85,6 +90,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     public void delete(K key) {
         root = delete(root, key);
+        size--;
     }
 
     private Node delete(Node node, K key) {
@@ -163,10 +169,13 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         return node.right == null ? root: findSmallestValue(node.right);
     }
 
-
-
+    public int size() { return size; }
 
     public Iterable<K> iterator() {
-        return null;
+        return (Iterable<K>) new Iterator();
+    }
+
+    private class Iterator {
+
     }
 }

@@ -9,7 +9,7 @@ public class TestForBST {
         System.out.println(tree.get(3));
         tree.delete(3);
         tree.inOrder();
-
+        System.out.println(tree.size());
     }
 }
 
